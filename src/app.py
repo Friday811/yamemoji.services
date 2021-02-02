@@ -7,9 +7,13 @@ app = Flask(__name__)
 def yam():
     return '🍠'
 
+
 @app.route('/<count>')
 def yams(count):
-    return count * '🍠'
+    try:
+        return int(count) * '🍠'
+    except ValueError:
+        return '🍠'
 
 
 if __name__ == '__main__':
