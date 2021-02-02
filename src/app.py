@@ -4,8 +4,12 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def hello_world():
+def yam():
     return '🍠'
+
+@app.route('/<count>')
+def yams(count):
+    return count * '🍠'
 
 
 if __name__ == '__main__':
