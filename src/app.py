@@ -11,7 +11,11 @@ def yam():
 @app.route('/<count>')
 def yams(count):
     try:
-        return int(count) * '🍠'
+        num_yams = int(count)
+        if num_yams >= 0:
+            return num_yams * '🍠'
+        else:
+            return (-num_yams) * '🥔'
     except ValueError:
         return '🍠'
 
